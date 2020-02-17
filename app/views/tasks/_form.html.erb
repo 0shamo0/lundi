@@ -25,6 +25,11 @@
     <%= form.label :date_butoire %>
     <%= form.date_select :date_butoire %>
   </div>
+  
+  <div class="field">
+    <%= form.label :collaborator_id %>
+    <%= form.collection_select(:collaborator_id, Collaborator.all, :id, :collaborator_email) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
