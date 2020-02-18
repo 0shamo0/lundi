@@ -1,10 +1,15 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    if current_user.admin == true
+      @tasks = Task.all
+    else
+      @tasks = current_user.tasks.all
+    end
   end
 
   # GET /tasks/1
@@ -24,7 +29,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -69,6 +74,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:task_name, :task_designation, :date_butoire, :collaborator_id)
+      params.require(:task).permit(:task_name, :task_designation, :date_butoire, :collaborator_id, :project_id, :user_id)
     end
 end
