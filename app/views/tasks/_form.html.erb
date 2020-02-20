@@ -38,10 +38,10 @@
   </div>
   
   <div class="field">
-    <%= form.label :status_work_id %>
-    <%= form.collection_select(:status_work_id, StatusWork.all, :id, :etape) %>
+    <%= form.label :step_id %>
+    <%= form.collection_select(:step_id, Step.all, :id, :step_name) %>
   </div>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>

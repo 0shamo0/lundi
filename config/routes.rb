@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :status_works
+  resources :steps
   devise_for :users
   root 'page#index'
   resources :collaborators

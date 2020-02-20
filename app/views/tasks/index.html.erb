@@ -26,7 +26,7 @@
         <td><%= task.date_butoire %></td>
         <td><%= task.collaborator.collaborator_email %></td>
         <td><%= task.project.project_name %></td>
-        <td><%= task.status_work.etape %></td>
+        <td><%= task.step.step_name %></td>
         <% if current_user == true %>
         <td><%= task.user.email %></td>
         <% end %>
