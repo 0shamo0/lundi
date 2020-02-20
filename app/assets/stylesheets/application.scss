@@ -11,8 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ /*
+ *= require font-awesome
+ */
+ 
+ 
+ 
 
 @import "bootstrap";
+@import "font-awesome";
 
 a {
     color: #2b2b2b;
@@ -62,7 +69,6 @@ a:visited {
     background-color: #CC3146;
     border-color: #CC3146;
 }
-
 
 
 

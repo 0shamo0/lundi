@@ -3,7 +3,7 @@
 
 <h1>Projects</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Project name</th>
@@ -15,9 +15,18 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to project.project_name, project %></td>
-        <td><%= link_to 'Mofifier', edit_project_path(project), :class => "btn btn-warning", :style => "color: white" %></td>
-        <td><%= link_to 'Détruire', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", :style => "color: white" %></td>
-      </tr>
+      
+        <td><td>
+          
+        <%= link_to edit_project_path(project) do %>
+        <%= fa_icon 'edit', :style => "font-size: 25px; color: #444444" %>
+        <% end %>
+        
+        <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= fa_icon 'trash', :style => "font-size: 25px; color: #444444" %>
+        <% end %>
+        
+        </tr>
     <% end %>
   </tbody>
 </table>
