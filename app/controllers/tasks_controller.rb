@@ -6,9 +6,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     if current_user.admin == true
-      @tasks = Task.all
+      @tasks = Task.all.order("project_id")
     else
-      @tasks = current_user.tasks.all
+      @tasks = current_user.tasks.all.order("project_id")
     end
   end
 
@@ -74,6 +74,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:task_name, :task_designation, :date_butoire, :collaborator_id, :project_id, :user_id)
+      params.require(:task).permit(:task_name, :task_designation, :date_butoire, :collaborator_id, :project_id, :user_id, :status_work_id)
     end
 end

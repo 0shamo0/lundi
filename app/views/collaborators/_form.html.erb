@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: collaborator, local: true) do |form| %>
   <% if collaborator.errors.any? %>
     <div id="error_explanation">
@@ -25,3 +26,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

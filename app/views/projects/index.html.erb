@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Projects</h1>
@@ -13,10 +14,9 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.project_name %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to project.project_name, project %></td>
+        <td><%= link_to 'Mofifier', edit_project_path(project), :class => "btn btn-warning", :style => "color: white" %></td>
+        <td><%= link_to 'Détruire', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", :style => "color: white" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to '+ Ajouter un nouveau projet', new_project_path, :class => "btn btn-primary", :style => "color: white" %>
+</div>

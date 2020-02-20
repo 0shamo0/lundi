@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :status_works
   devise_for :users
   root 'page#index'
   resources :collaborators
