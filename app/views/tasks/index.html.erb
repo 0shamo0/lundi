@@ -27,14 +27,26 @@
         <td><%= task.date_butoire %></td>
         <td><%= task.collaborator.collaborator_email %></td>
         <td><%= task.project.project_name %></td>
-        <td><%= task.step.step_name %></td>
+        
+        <% if task.step_id == 1 %>
+          <td style="background-color: #ff1434; color: white"><%= task.step.step_name %></td>
+        <% elsif task.step_id == 2 %>
+          <td style="background-color: #ff3d57; color: white"><%= task.step.step_name %></td>
+        <% elsif task.step_id == 3 %>
+          <td style="background-color: orange; color: white"><%= task.step.step_name %></td>
+        <% elsif task.step_id == 4 %>
+          <td style="background-color: #17eb8f; color: white"><%= task.step.step_name %></td>
+        <% else %>
+          <td style="background-color: #00ca72; color: white"><%= task.step.step_name %></td>
+        <% end %>
+     
         <% if current_user == true %>
-        <td><%= task.user.email %></td>
+          <td><%= task.user.email %></td>
         <% end %>
         
   <div class="navbar-nav ml-auto">
         <td><td>
-          
+        <div class="luka" style="text-align: right;">  
         <%= link_to edit_task_path(task) do %>
         <%= fa_icon 'edit', :style => "font-size: 25px; color: #444444" %>
         <% end %>
@@ -42,6 +54,7 @@
         <%= link_to task, method: :delete, data: { confirm: 'Are you sure?' } do %>
         <%= fa_icon 'trash', :style => "font-size: 25px; color: #444444" %>
         <% end %>
+        </div>
   </div>
       
       </tr>

@@ -18,13 +18,15 @@
       
         <td><td>
           
+        <div class="luka" style="text-align: right;">  
         <%= link_to edit_project_path(project) do %>
-        <%= fa_icon 'edit', :style => "font-size: 25px; color: #444444" %>
+        <%= fa_icon 'edit', :style => "font-size: 25px; color: #444444;" %>
         <% end %>
         
         <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do %>
         <%= fa_icon 'trash', :style => "font-size: 25px; color: #444444" %>
         <% end %>
+        </div>
         
         </tr>
     <% end %>
