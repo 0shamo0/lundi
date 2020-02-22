@@ -6,8 +6,6 @@ ruby '2.6.0'
 
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
-gem 'sqlite3'
-
 gem 'bootstrap', '~> 4.4.1'
 
 gem 'jquery-rails'
@@ -32,6 +30,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
 end
 
 group :development do
@@ -45,6 +44,11 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 
