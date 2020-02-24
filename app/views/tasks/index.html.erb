@@ -7,17 +7,7 @@
 
 <tr>
 
-<% if current_user.email == "team_1@mail.com" %>
-  <td><%= image_tag("kakashi.jpg", style:'width: 50px; border-radius: 50%; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;') %></td>
-  <td>Kakashi HATAKE</td>
-      <% elsif current_user.email == "team_2@mail.com"%>
-  <td><%= image_tag("orochimaru.png", style:'width: 50px; border-radius: 50%; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;') %></td>
-  <td>Orochimaru</td>
-      <% else %>
-  <td><%= image_tag("second.png", style:'width: 50px; border-radius: 50%; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;') %></td>
-  <td>Hokage</td>
-<% end %>
-</tr>
+
 
 <table class="table table-hover">
   <thead>
