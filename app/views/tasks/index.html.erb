@@ -28,7 +28,15 @@
         
         <td><%= link_to task.task_name, task %></td>
         <td><%= task.task_designation.truncate(30) %></td>
-        <td><%= task.date_butoire %></td>
+        
+        <% my_date = Date.today %>
+        
+        <% if my_date > task.date_butoire - 5.day %>
+          <td style="background-color: #ff3d57; color: white;"><%= task.date_butoire %></td>
+        <% else %>
+          <td style="background-color: #00ca72; color: white;"><%= task.date_butoire %></td>
+        <% end %>
+        
         <td><%= task.project.project_name %></td>
         
         <div class="my_ico" style="width: 40px; height: auto;">
