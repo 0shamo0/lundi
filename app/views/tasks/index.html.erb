@@ -3,11 +3,24 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Tasks</h1>
+<h1>Liste des tâches</h1>
 
-<tr>
+<div class="marge" style="margin-top: 35px; margin-bottom: 35px;">
 
+<% if current_user.id == 1 %>
+    <td><%= image_tag("kakashi.jpg", style:'width: 40px; border-radius: 50%') %></td>
+<% elsif current_user.id == 2 %>    
+    <td><%= image_tag("gai.png", style:'width: 40px; border-radius: 50%') %></td>
+<% elsif current_user.id == 3 %>   
+    <td><%= image_tag("asuma.png", style:'width: 40px; border-radius: 50%') %></td>
+<% else%>   
+    <td><%= image_tag("Hiruzen.png", style:'width: 40px; border-radius: 50%') %></td>
+<% end %>
 
+<div class="marge"  style="margin-top: -30px; margin-left: 60px;">
+<td><%= current_user.email %></td>
+</div>
+</div>
 
 <table class="table table-hover">
   <thead>
@@ -42,8 +55,6 @@
         <div class="my_ico" style="width: 40px; height: auto;">
             <td><%= mail_to task.collaborator.collaborator_email,image_tag(task.collaborator.image, style:'width: 40px; border-radius: 50%') %></td>
         </div>
-        
-        
         
         <% if task.step_id == 1 %>
           <td style="background-color: #ff1434; color: white; text-align: center"><%= task.step.step_name %></td>
