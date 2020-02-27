@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding-bottom: 100px">
 <div class="animated fadeIn delay-1s">
 <p id="notice"><%= notice %></p>
 
@@ -7,11 +7,11 @@
 
 <div class="marge" style="margin-top: 35px; margin-bottom: 35px;">
 
-<% if current_user.id == 1 %>
+<% if current_user.email == "team_1@mail.com" %>
     <td><%= image_tag("kakashi.jpg", style:'width: 40px; border-radius: 50%') %></td>
-<% elsif current_user.id == 2 %>    
+<% elsif current_user.id == "team_2@mail.com" %>    
     <td><%= image_tag("gai.png", style:'width: 40px; border-radius: 50%') %></td>
-<% elsif current_user.id == 3 %>   
+<% elsif current_user.id == "team_3@mail.com" %>   
     <td><%= image_tag("asuma.png", style:'width: 40px; border-radius: 50%') %></td>
 <% else%>   
     <td><%= image_tag("Hiruzen.png", style:'width: 40px; border-radius: 50%') %></td>
@@ -89,6 +89,10 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+
 
 <br>
 

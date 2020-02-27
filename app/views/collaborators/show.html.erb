@@ -1,6 +1,10 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
+
+
+<div class="card" style="width: 25rem; text-align: center; margin: auto">
+ 
 <p>
   <strong>Nom du collaborateur:</strong>
   <%= @collaborator.collaborator_name %>
@@ -12,8 +16,7 @@
 </p>
 
 <p>
-  <strong>Email du collaborateur</strong>
-<div class="my_ico" style="width: 150px; height: auto;">
+<div class="my_ico" style="width: 150px; height: auto; margin: auto">
   <%= image_tag(@collaborator.image, style:'width: 150px; border-radius: 50%') %>
 </div>
 </p>
@@ -21,4 +24,6 @@
 
 <%= link_to 'Edit', edit_collaborator_path(@collaborator) %> |
 <%= link_to 'Back', collaborators_path %>
+</div>
+
 </div>
